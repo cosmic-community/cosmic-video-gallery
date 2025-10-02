@@ -50,7 +50,7 @@ export default function VideoCard({ video }: VideoCardProps) {
 
       {/* Content */}
       <div className="p-4">
-        <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
+        <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-[#29ABE2] transition-colors">
           {metadata.title}
         </h3>
         

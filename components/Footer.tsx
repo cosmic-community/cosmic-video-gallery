@@ -32,7 +32,7 @@ export default function Footer() {
                   href="https://www.cosmicjs.com/docs"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-cosmic-blue text-sm transition-colors"
+                  className="text-gray-400 hover:text-[#29ABE2] text-sm transition-colors"
                 >
                   Documentation
                 </a>
@@ -42,7 +42,7 @@ export default function Footer() {
                   href="https://www.cosmicjs.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-cosmic-blue text-sm transition-colors"
+                  className="text-gray-400 hover:text-[#29ABE2] text-sm transition-colors"
                 >
                   Cosmic Website
                 </a>
@@ -52,7 +52,7 @@ export default function Footer() {
                   href="https://www.cosmicjs.com/blog"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-cosmic-blue text-sm transition-colors"
+                  className="text-gray-400 hover:text-[#29ABE2] text-sm transition-colors"
                 >
                   Blog
                 </a>
@@ -62,7 +62,7 @@ export default function Footer() {
                   href="https://www.cosmicjs.com/community"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-cosmic-blue text-sm transition-colors"
+                  className="text-gray-400 hover:text-[#29ABE2] text-sm transition-colors"
                 >
                   Community
                 </a>
@@ -72,7 +72,7 @@ export default function Footer() {
                   href="https://www.cosmicjs.com/community/projects/cosmic-video-gallery"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-cosmic-blue text-sm transition-colors"
+                  className="text-gray-400 hover:text-[#29ABE2] text-sm transition-colors"
                 >
                   Clone this App
                 </a>
@@ -88,7 +88,7 @@ export default function Footer() {
                 href="https://www.youtube.com/@CosmicJS"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cosmic-blue transition-colors"
+                className="text-gray-400 hover:text-[#29ABE2] transition-colors"
                 aria-label="YouTube"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -99,7 +99,7 @@ export default function Footer() {
                 href="https://twitter.com/cosmicjs"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cosmic-blue transition-colors"
+                className="text-gray-400 hover:text-[#29ABE2] transition-colors"
                 aria-label="Twitter"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -110,7 +110,7 @@ export default function Footer() {
                 href="https://github.com/cosmicjs"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cosmic-blue transition-colors"
+                className="text-gray-400 hover:text-[#29ABE2] transition-colors"
                 aria-label="GitHub"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -124,7 +124,7 @@ export default function Footer() {
                 href="https://www.youtube.com/@CosmicJS"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-cosmic-blue hover:underline"
+                className="text-[#29ABE2] hover:underline"
               >
                 YouTube channel
               </a>
@@ -144,7 +144,7 @@ export default function Footer() {
                 href="https://www.cosmicjs.com/privacy-policy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-gray-400 hover:text-cosmic-blue transition-colors"
+                className="text-sm text-gray-400 hover:text-[#29ABE2] transition-colors"
               >
                 Privacy Policy
               </a>
@@ -152,7 +152,7 @@ export default function Footer() {
                 href="https://www.cosmicjs.com/terms"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-gray-400 hover:text-cosmic-blue transition-colors"
+                className="text-sm text-gray-400 hover:text-[#29ABE2] transition-colors"
               >
                 Terms of Service
               </a>

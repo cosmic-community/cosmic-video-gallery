@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-cosmic-dark via-gray-900 to-cosmic-blue text-white overflow-hidden">
+    <section className="relative bg-gradient-to-br from-cosmic-dark via-gray-900 to-[#29ABE2] text-white overflow-hidden">
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <img 
         src="https://imgix.cosmicjs.com/c2ed5890-250a-11ef-adb1-8b946b3a80e4-cosmic-banner.png?w=2400&h=600&fit=crop&auto=format,compress"
