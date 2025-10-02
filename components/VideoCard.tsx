@@ -1,5 +1,4 @@
-'use client'
-
+import Link from 'next/link'
 import { Video } from '@/types'
 
 interface VideoCardProps {
@@ -7,79 +6,66 @@ interface VideoCardProps {
 }
 
 export default function VideoCard({ video }: VideoCardProps) {
-  if (!video || !video.metadata) {
+  const { slug, metadata } = video
+  
+  if (!metadata) {
     return null
   }
-  
-  const { metadata } = video
-  const youtubeId = metadata.youtube_id
-  const youtubeUrl = `https://www.youtube.com/watch?v=${youtubeId}`
+
   const thumbnailUrl = metadata.thumbnail?.imgix_url 
     ? `${metadata.thumbnail.imgix_url}?w=800&h=450&fit=crop&auto=format,compress`
-    : `https://i.ytimg.com/vi/${youtubeId}/maxresdefault.jpg`
-  
-  const formatDate = (dateString: string | undefined) => {
-    if (!dateString) return 'Date not available'
-    
-    try {
-      const date = new Date(dateString)
-      return date.toLocaleDateString('en-US', { 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric' 
+    : `https://i.ytimg.com/vi/${metadata.youtube_id}/maxresdefault.jpg`
+
+  const publishedDate = metadata.published_date 
+    ? new Date(metadata.published_date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
       })
-    } catch (error) {
-      return 'Date not available'
-    }
-  }
-  
+    : null
+
   return (
-    <a 
-      href={youtubeUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 block group"
+    <Link 
+      href={`/videos/${slug}`}
+      className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
     >
-      {/* Video Thumbnail */}
-      <div className="relative aspect-video bg-gray-900">
-        <div className="relative w-full h-full">
-          <img 
-            src={thumbnailUrl}
-            alt={metadata.title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-all flex items-center justify-center">
-            <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-              <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </div>
+      {/* Thumbnail */}
+      <div className="relative aspect-video overflow-hidden bg-gray-200">
+        <img
+          src={thumbnailUrl}
+          alt={metadata.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          width={800}
+          height={450}
+        />
+        {/* Play button overlay */}
+        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300">
+          <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-300">
+            <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+            </svg>
           </div>
         </div>
       </div>
-      
-      {/* Video Info */}
-      <div className="p-5">
-        <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-cosmic-blue transition-colors">
+
+      {/* Content */}
+      <div className="p-4">
+        <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
           {metadata.title}
         </h3>
         
         {metadata.description && (
-          <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+          <p className="text-gray-600 text-sm mb-3 line-clamp-2">
             {metadata.description}
           </p>
         )}
         
-        <div className="flex items-center justify-between text-sm text-gray-500">
-          <span>{formatDate(metadata.published_date)}</span>
-          <span className="text-cosmic-blue group-hover:text-cosmic-blue font-medium flex items-center gap-1">
-            Watch on YouTube
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </span>
-        </div>
+        {publishedDate && (
+          <p className="text-gray-500 text-xs">
+            {publishedDate}
+          </p>
+        )}
       </div>
-    </a>
+    </Link>
   )
 }
