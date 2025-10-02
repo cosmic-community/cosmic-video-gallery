@@ -11,13 +11,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <img 
-              src="https://imgix.cosmicjs.com/a28a7220-c98c-11ed-b01d-23d7b265c299-cosmicicon.png?w=80&h=80&fit=crop&auto=format,compress"
-              alt="Cosmic Logo"
-              width="40"
-              height="40"
-              className="rounded-lg"
-            />
+            <div className="flex-shrink-0">
+              <img 
+                src="https://imgix.cosmicjs.com/a28a7220-c98c-11ed-b01d-23d7b265c299-cosmicicon.png?w=80&h=80&fit=crop&auto=format,compress"
+                alt="Cosmic Logo"
+                width="40"
+                height="40"
+                className="w-10 h-10 object-contain"
+              />
+            </div>
             <div>
               <h1 className="text-xl font-bold text-gray-900">Cosmic Videos</h1>
               <p className="text-xs text-gray-500 hidden sm:block">YouTube Channel Gallery</p>
@@ -41,7 +43,7 @@ export default function Header() {
               href="https://www.cosmicjs.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-white bg-cosmic-blue hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors"
+              className="text-sm font-medium text-white bg-cosmic-blue hover:bg-[#1e8ab8] px-4 py-2 rounded-lg transition-colors"
             >
               Visit Cosmic
             </a>
@@ -85,7 +87,7 @@ export default function Header() {
                 href="https://www.cosmicjs.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-white bg-cosmic-blue hover:bg-blue-700 px-4 py-3 rounded-lg transition-colors text-center"
+                className="text-sm font-medium text-white bg-cosmic-blue hover:bg-[#1e8ab8] px-4 py-3 rounded-lg transition-colors text-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Visit Cosmic

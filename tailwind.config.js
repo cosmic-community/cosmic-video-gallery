@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       colors: {
         cosmic: {
-          blue: '#0066FF',
+          blue: '#29ABE2',
           dark: '#11171A',
           light: '#F5F7FA',
         },
