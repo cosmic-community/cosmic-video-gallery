@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import { Video } from '@/types'
 
 interface VideoCardProps {
@@ -8,14 +7,13 @@ interface VideoCardProps {
 }
 
 export default function VideoCard({ video }: VideoCardProps) {
-  const [isPlaying, setIsPlaying] = useState(false)
-  
   if (!video || !video.metadata) {
     return null
   }
   
   const { metadata } = video
   const youtubeId = metadata.youtube_id
+  const youtubeUrl = `https://www.youtube.com/watch?v=${youtubeId}`
   const thumbnailUrl = metadata.thumbnail?.imgix_url 
     ? `${metadata.thumbnail.imgix_url}?w=800&h=450&fit=crop&auto=format,compress`
     : `https://i.ytimg.com/vi/${youtubeId}/maxresdefault.jpg`
@@ -37,33 +35,28 @@ export default function VideoCard({ video }: VideoCardProps) {
   
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-      {/* Video Thumbnail/Player */}
-      <div className="relative aspect-video bg-gray-900">
-        {isPlaying ? (
-          <iframe
-            src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`}
-            title={metadata.title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="absolute inset-0 w-full h-full"
+      {/* Video Thumbnail - Links to YouTube */}
+      <a 
+        href={youtubeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative aspect-video bg-gray-900 block"
+      >
+        <div className="relative w-full h-full group">
+          <img 
+            src={thumbnailUrl}
+            alt={metadata.title}
+            className="w-full h-full object-cover"
           />
-        ) : (
-          <div className="relative w-full h-full group cursor-pointer" onClick={() => setIsPlaying(true)}>
-            <img 
-              src={thumbnailUrl}
-              alt={metadata.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-all flex items-center justify-center">
-              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
+          <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-all flex items-center justify-center">
+            <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      </a>
       
       {/* Video Info */}
       <div className="p-5">
@@ -80,7 +73,7 @@ export default function VideoCard({ video }: VideoCardProps) {
         <div className="flex items-center justify-between text-sm text-gray-500">
           <span>{formatDate(metadata.published_date)}</span>
           <a 
-            href={`https://www.youtube.com/watch?v=${youtubeId}`}
+            href={youtubeUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-cosmic-blue hover:text-blue-700 font-medium flex items-center gap-1"
