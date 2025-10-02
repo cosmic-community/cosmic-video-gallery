@@ -43,7 +43,7 @@ export default function Header() {
               href="https://www.cosmicjs.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-white bg-cosmic-blue hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors"
+              className="text-sm font-medium text-white bg-cosmic-blue hover:bg-[#1e8ab8] px-4 py-2 rounded-lg transition-colors"
             >
               Visit Cosmic
             </a>
@@ -87,7 +87,7 @@ export default function Header() {
                 href="https://www.cosmicjs.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-white bg-cosmic-blue hover:bg-blue-700 px-4 py-3 rounded-lg transition-colors text-center"
+                className="text-sm font-medium text-white bg-cosmic-blue hover:bg-[#1e8ab8] px-4 py-3 rounded-lg transition-colors text-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Visit Cosmic
