@@ -67,6 +67,16 @@ export default function Footer() {
                   Community
                 </a>
               </li>
+              <li>
+                <a 
+                  href="https://www.cosmicjs.com/community/projects/cosmic-video-gallery"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-cosmic-blue text-sm transition-colors"
+                >
+                  Clone this App
+                </a>
+              </li>
             </ul>
           </div>
           
