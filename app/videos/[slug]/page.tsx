@@ -137,7 +137,7 @@ export default async function VideoPage({ params }: VideoPageProps) {
         <div className="mt-8">
           <a
             href="/"
-            className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+            className="inline-flex items-center text-[#29ABE2] hover:text-[#1e8ab8] font-medium"
           >
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
