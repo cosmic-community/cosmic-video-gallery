@@ -34,15 +34,15 @@ export default function VideoCard({ video }: VideoCardProps) {
   }
   
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-      {/* Video Thumbnail - Links to YouTube */}
-      <a 
-        href={youtubeUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="relative aspect-video bg-gray-900 block"
-      >
-        <div className="relative w-full h-full group">
+    <a 
+      href={youtubeUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 block group"
+    >
+      {/* Video Thumbnail */}
+      <div className="relative aspect-video bg-gray-900">
+        <div className="relative w-full h-full">
           <img 
             src={thumbnailUrl}
             alt={metadata.title}
@@ -56,11 +56,11 @@ export default function VideoCard({ video }: VideoCardProps) {
             </div>
           </div>
         </div>
-      </a>
+      </div>
       
       {/* Video Info */}
       <div className="p-5">
-        <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+        <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-cosmic-blue transition-colors">
           {metadata.title}
         </h3>
         
@@ -72,19 +72,14 @@ export default function VideoCard({ video }: VideoCardProps) {
         
         <div className="flex items-center justify-between text-sm text-gray-500">
           <span>{formatDate(metadata.published_date)}</span>
-          <a 
-            href={youtubeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-cosmic-blue hover:text-blue-700 font-medium flex items-center gap-1"
-          >
+          <span className="text-cosmic-blue group-hover:text-blue-700 font-medium flex items-center gap-1">
             Watch on YouTube
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
-          </a>
+          </span>
         </div>
       </div>
-    </div>
+    </a>
   )
 }
