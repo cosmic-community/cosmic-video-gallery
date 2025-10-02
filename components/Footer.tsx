@@ -19,7 +19,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-400 text-sm">
-              Explore tutorials and content about building modern web applications with Cosmic CMS.
+              Explore tutorials and content about building modern web applications with Cosmic.
             </p>
           </div>
           
@@ -131,7 +131,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-6">
               <a 
-                href="https://www.cosmicjs.com/privacy"
+                href="https://www.cosmicjs.com/privacy-policy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-gray-400 hover:text-cosmic-blue transition-colors"
