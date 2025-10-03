@@ -1,4 +1,3 @@
-# README.md
 # 🎥 Cosmic Video Gallery
 
 ![App Preview](https://imgix.cosmicjs.com/c2ed5890-250a-11ef-adb1-8b946b3a80e4-cosmic-banner.png?w=1200&h=300&fit=crop&auto=format,compress)
